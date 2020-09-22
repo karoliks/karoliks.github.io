@@ -4,7 +4,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 
 function Nav() {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState("projects");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -12,9 +12,8 @@ function Nav() {
   return (
     <div>
       <Tabs value={value} onChange={handleChange} centered>
-        <Tab value="home" label="Home" component={Link} to={"/"} />
-
-        <Tab value="about" label="About" component={Link} to={"/about"} />
+        <Tab value="projects" label="Projects" component={Link} to={"/"} />
+        <Tab value="gallery" label="Gallery" component={Link} to={"/gallery"} />
       </Tabs>
     </div>
   );

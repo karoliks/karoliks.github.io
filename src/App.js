@@ -1,22 +1,46 @@
 import React from "react";
-import ok from "./logo.svg";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Home from "./home";
-import About from "./about";
+import Projects from "./projects";
+import Gallery from "./gallery";
 import Nav from "./nav";
 
+import { ThemeProvider } from "@material-ui/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
+import { Container } from "@material-ui/core";
+import Box from "@material-ui/core/Box";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#041B15",
+    },
+    secondary: {
+      main: "#4db6ac",
+    },
+  },
+});
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Nav />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" exact component={About} />
-        </Switch>
-      </div>
+      <ThemeProvider theme={theme}>
+        {/* <Container style={{ backgroundColor: "#cfe8fc", minHeight: "100vh" }}> */}
+        <Container style={{ height: "100vh" }}>
+          <Box
+            display="flex"
+            flexDirection="column"
+            style={{ height: "100vh" }}
+          >
+            {/* <Nav /> */}
+            <h1 className="title">Projects</h1>
+            <Switch>
+              <Route path="/" exact component={Projects} />
+              <Route path="/gallery" exact component={Gallery} />
+            </Switch>
+          </Box>
+        </Container>
+      </ThemeProvider>
     </Router>
   );
 }

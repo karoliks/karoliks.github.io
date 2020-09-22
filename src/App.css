@@ -1,8 +1,9 @@
 /* color palette: #99b898 #feceab #ff847c #e84a5f*/
 
-.App {
+/* .App {
   text-align: center;
-}
+  background-color: #99b898;
+} */
 
 .App-logo {
   height: 40vmin;
@@ -37,4 +38,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.title {
+  margin: auto;
+  margin-top: 64px;
+  font-size: 4em;
+  color: #b5ca8d;
 }
