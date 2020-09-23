@@ -22,9 +22,9 @@ export const projectdata = {
   },
   reactgame: {
     img: "/projectvisuals/Screenshot from 2020-08-16 17-39-17.png",
-    title: "React Game",
+    title: "RPG Game",
     desc:
-      "RPG game made with React. Made to gain a deeper understanding of React  and Redux. (And beacause I wanted to make pixel art:))",
+      "RPG game made with React. Made to gain a deeper understanding of React  and Redux. (And beacause I wanted to make pixel art)",
     link: "https://karoliks.github.io/react-game/",
   },
 };
