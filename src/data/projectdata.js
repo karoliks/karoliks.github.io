@@ -18,7 +18,7 @@ export const projectdata = {
     title: "AFK Forum",
     desc:
       "A group project made for the course TDT414 - Software Engineering. The forum is made using Django and hosted on Heroku.",
-    link: "https://karoliks.github.io/experimenting-with-smooth-scroll/",
+    link: "http://afk-forum.herokuapp.com/",
   },
   reactgame: {
     img: "/projectvisuals/Screenshot from 2020-08-16 17-39-17.png",
