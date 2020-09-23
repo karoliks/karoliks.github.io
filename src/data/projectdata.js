@@ -1,14 +1,7 @@
 export const projectdata = {
-  reactgame: {
-    img: "/projectvisuals/Screenshot from 2020-08-16 17-39-17.png",
-    title: "React game",
-    desc:
-      "RPG game made with React. Made to gain a deeper understanding of React.",
-    link: "https://karoliks.github.io/react-game/",
-  },
   recipeapp: {
     img: "/projectvisuals/recipe-app.png",
-    title: "Recipe app",
+    title: "Recipe Finder",
     desc:
       "Simple display and search for recipes. Created as a way to learn React.",
     link: "https://karoliks.github.io/recipe-app/",
@@ -16,7 +9,22 @@ export const projectdata = {
   exp: {
     img: "/projectvisuals/exp.png",
     title: "Gallery",
-    desc: "Made to test out smooth scroll functions in JavaScript",
+    desc:
+      "Page to show of earlier creations. Made to test out smooth scroll functions in JavaScript",
     link: "https://karoliks.github.io/experimenting-with-smooth-scroll/",
+  },
+  afk: {
+    img: "/projectvisuals/afk.png",
+    title: "AFK Forum",
+    desc:
+      "A group project made for the course TDT414 - Software Engineering. The forum is made using Django and hosted on Heroku.",
+    link: "https://karoliks.github.io/experimenting-with-smooth-scroll/",
+  },
+  reactgame: {
+    img: "/projectvisuals/Screenshot from 2020-08-16 17-39-17.png",
+    title: "React Game",
+    desc:
+      "RPG game made with React. Made to gain a deeper understanding of React  and Redux. (And beacause I wanted to make pixel art:))",
+    link: "https://karoliks.github.io/react-game/",
   },
 };
