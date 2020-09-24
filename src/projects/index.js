@@ -50,7 +50,7 @@ function Projects() {
           rel="noopener noreferrer"
         >
           <img
-            src={"/githublogo/GitHub-Mark/PNG/GitHub-Mark-64px.png"}
+            src={"/githublogo/only-logo-vector.svg"}
             alt={"GitHub"}
             width={"64px"}
             height={"64px"}
