@@ -44,7 +44,11 @@ function Projects() {
     <div>
       <div className="titleBox">
         <h1 className="title">Projects</h1>
-        <a href="https://github.com/karoliks">
+        <a
+          href="https://github.com/karoliks"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             src={"/githublogo/GitHub-Mark/PNG/GitHub-Mark-64px.png"}
             alt={"GitHub"}
