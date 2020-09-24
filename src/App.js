@@ -33,7 +33,7 @@ function App() {
             style={{ height: "100vh" }}
           >
             {/* <Nav /> */}
-            <h1 className="title">Projects</h1>
+
             <Switch>
               <Route path="/" exact component={Projects} />
               <Route path="/gallery" exact component={Gallery} />

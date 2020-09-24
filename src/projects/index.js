@@ -41,39 +41,52 @@ function Projects() {
   }
 
   return (
-    <Box display="flex" name="bokstest" flexGrow="3" alignItems="center">
-      <Container maxWidth="md">
-        <Grid container spacing={6} direction="row">
-          {Object.keys(projectdata).map((project, i) => (
-            <Grid key={i} item xs={6}>
-              <Card classes={{ root: classes.card }}>
-                <CardActionArea
-                  onClick={() => routeTo(projectdata[project]["link"])}
-                >
-                  <CardMedia
-                    className={classes.media}
-                    image={projectdata[project]["img"]}
-                    title={projectdata[project]["title"]}
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      {projectdata[project]["title"]}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      component="p"
-                    >
-                      {projectdata[project]["desc"]}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </Box>
+    <div>
+      <div className="titleBox">
+        <h1 className="title">Projects</h1>
+        <a href="https://github.com/karoliks">
+          <img
+            src={"/githublogo/GitHub-Mark/PNG/GitHub-Mark-64px.png"}
+            alt={"GitHub"}
+            width={"64px"}
+            height={"64px"}
+          ></img>
+        </a>
+      </div>
+      <Box display="flex" name="bokstest" flexGrow="3" alignItems="center">
+        <Container maxWidth="md">
+          <Grid container spacing={6} direction="row">
+            {Object.keys(projectdata).map((project, i) => (
+              <Grid key={i} item xs={6}>
+                <Card classes={{ root: classes.card }}>
+                  <CardActionArea
+                    onClick={() => routeTo(projectdata[project]["link"])}
+                  >
+                    <CardMedia
+                      className={classes.media}
+                      image={projectdata[project]["img"]}
+                      title={projectdata[project]["title"]}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {projectdata[project]["title"]}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                      >
+                        {projectdata[project]["desc"]}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
+    </div>
   );
 }
 
