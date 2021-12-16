@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Projects from "./projects";
+// import Projects from "./projects";
+import Projects2 from "./projects2";
+import Platform from "./platform";
 import Gallery from "./gallery";
 import Nav from "./nav";
 
@@ -10,6 +12,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { Container } from "@material-ui/core";
 import Box from "@material-ui/core/Box";
+import { GameEngine } from "react-game-engine";
 
 const theme = createMuiTheme({
   palette: {
@@ -35,7 +38,14 @@ function App() {
             {/* <Nav /> */}
 
             <Switch>
-              <Route path="/" exact component={Projects} />
+              <Route path="/" exact component={Projects2} />
+{/* 
+              <Route path="/" exact component={Platform}>
+              <GameEngine
+                ref={useRef("engine")}
+                systems={[]}
+              >
+              </GameEngine> */}
               <Route path="/gallery" exact component={Gallery} />
             </Switch>
           </Box>
