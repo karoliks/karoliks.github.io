@@ -15,48 +15,72 @@ function Scene (props) {
       MouseConstraint = Matter.MouseConstraint;
 
     var engine = Engine.create({
-      // positionIterations: 20
+      positionIterations: 20
     });
 
     var render = Render.create({
       element: scene.current,
       engine: engine,
       options: {
-        width: 600,
-        height: 600,
-        wireframes: false
+        // width: window.innerWidth,
+        // height: window.innerHeight,
+        // wireframes: false
       }
     });
 
-    var ballA = Bodies.circle(210, 100, 30, { restitution: 0.5 });
-    var ballB = Bodies.circle(110, 50, 30, { restitution: 0.5 });
     World.add(engine.world, [
       // walls
-      Bodies.rectangle(200, 0, 600, 50, { isStatic: true }),
-      Bodies.rectangle(200, 600, 600, 50, { isStatic: true }),
-      Bodies.rectangle(260, 300, 50, 600, { isStatic: true }),
-      Bodies.rectangle(0, 300, 50, 600, { isStatic: true })
+      Bodies.rectangle(0, 0, window.innerWidth, 10, { isStatic: true, render: { fillStyle: '#aebdf5' } }),
+      Bodies.rectangle(0,  window.innerHeight, window.innerWidth, 10, { isStatic: true, render: { fillStyle: '#aebdf5' } }),
+      Bodies.rectangle(window.innerHeight, 0, 10, window.innerHeight,  { isStatic: true, render: { fillStyle: '#aebdf5' } }),
+      Bodies.rectangle(0, window.innerWidth, 10, window.innerHeight,  { isStatic: true, render: { fillStyle: '#aebdf5' } }),
     ]);
 
-    World.add(engine.world, [ballA, ballB]);
+ 
+    const floor = Bodies.rectangle(150, 300, 300, 20, {
+      isStatic: true,
+      render: {
+        fillStyle: 'blue',
+      },
+    })
 
-    // add mouse control
-    var mouse = Mouse.create(render.canvas),
-      mouseConstraint = MouseConstraint.create(engine, {
-        mouse: mouse,
-        constraint: {
-          stiffness: 0.2,
-          render: {
-            visible: false
-          }
-        }
-      });
+    const ball = Bodies.circle(150, 0, 10, {
+      restitution: 0.9,
+      render: {
+        fillStyle: 'yellow',
+      },
+    })
 
-    World.add(engine.world, mouseConstraint);
+    World.add(engine.world, [floor, ball])
 
-    Matter.Events.on(mouseConstraint, "mousedown", function(event) {
-      World.add(engine.world, Bodies.circle(150, 50, 30, { restitution: 0.7 }));
-    });
+     // translate keycodes to directions
+  function handleKeyDown(e) {
+
+    e.preventDefault();
+    switch (e.keyCode) {
+      // case 32: // space
+      //   return handleSpace();
+      case 37: // left
+        return Matter.Body.applyForce(ball, {x: ball.position.x, y: ball.position.y}, {x: -0.005, y: 0});
+      case 38: // up
+        return Matter.Body.applyForce(ball, {x: ball.position.x, y: ball.position.y}, {x: 0, y: -0.005});
+      case 39: // rigth
+        Matter.Body.applyForce(ball, {x: ball.position.x, y: ball.position.y}, {x: 0.005, y: 0});
+      case 40: // down
+        return Matter.Body.applyForce(ball, {x: ball.position.x, y: ball.position.y}, {x: 0, y: 0.005});
+      default:
+        return true;
+    }
+  }
+
+  window.addEventListener("keydown", (e) => {
+      handleKeyDown(e);
+  });
+
+  // // New ball
+  // function handleSpace(){
+  //     World.add(engine.world, Bodies.circle(150, 50, 30, { restitution: 0.7 }));
+  // }
 
     Engine.run(engine);
 
